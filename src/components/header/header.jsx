@@ -4,7 +4,7 @@ import styles from './header.module.css';
 const Header = (props) => {
     return(
         <header className={styles.header}>
-            <img className={styles.headerImg} src="/images/logo.png"/>
+            <img className={styles.headerImg} src="/images/logo.png" alt="logo"/>
             <h2 className={styles.headerText}>Business Card Maker</h2>
         </header>
     )
