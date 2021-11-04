@@ -19,6 +19,9 @@ class AuthService {
         // const auth = getAuth();
         // return signInWithPopup(auth,provider);
     }
+    logout() {
+        
+    }
 }
 
 export default AuthService;

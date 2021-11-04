@@ -9,17 +9,15 @@ const Login = ({authService}) => {
         .then(console.log("d"));
     }
     return(
-        <div className={styles.login}>
+        <section className={styles.login}>
             <Header/>
-            <div className={styles.loginContent}>
-                <h1>Login</h1>
-                <ul>
-                    <li><button className={styles.button} onClick={onLogin}>Google</button></li>
-                    <li><button className={styles.button} onClick={onLogin}>Github</button></li>
-                </ul>
-            </div>
+            <h1>Login</h1>
+            <ul>
+                <li><button className={styles.button} onClick={onLogin}>Google</button></li>
+                <li><button className={styles.button} onClick={onLogin}>Github</button></li>
+            </ul>
             <Footer/>
-        </div>
+        </section>
     )
 }
         
