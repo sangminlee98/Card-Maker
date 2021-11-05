@@ -5,12 +5,9 @@ import Footer from '../footer/footer';
 import { useNavigate } from 'react-router';
 
 const Login = ({authService}) => {
-    const history = useNavigate();
+    const navigate = useNavigate();
     const goToMaker = (userId) => {
-        history({
-            pathname: '/maker',
-            state: {id: userId},
-        });
+        navigate('/maker',{state:{id:userId}});
     }
     const onLogin = (event) => {
         authService.login(event.currentTarget.textContent)

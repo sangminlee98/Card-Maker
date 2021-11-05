@@ -1,8 +1,19 @@
+@value mediaQuery from '../../common/size.css';
+
 .maker {
-  width: 80%;
-  background-color: white;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
 }
 
 .makerContents {
-  height: 80vh;
+  display: flex;
+  flex: 1;
+}
+
+@media screen and (max-width: mediaQuery) {
+  .makerContents {
+    flex-direction: column;
+  }
 }
