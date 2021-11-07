@@ -59,11 +59,16 @@ const Maker = ({authService}) => {
         setCards(newCard);
     }
 
+    const deleteCard = (mailAddr) => {
+        const newCard = cards.filter( item => item.email !== mailAddr);
+        setCards(newCard);
+    }
+
     return (
         <section className={styles.maker}>
             <Header onLogout={onLogout} />
             <div className={styles.makerContents}>
-                <Editor cards={cards} addCard={addCard}/>
+                <Editor cards={cards} addCard={addCard} deleteCard={deleteCard} />
                 <Preview cards={cards}/>
             </div>
             <Footer/>
