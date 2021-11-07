@@ -44,6 +44,7 @@ const Maker = ({authService}) => {
     const onLogout = () => {
         authService.logout();
     }
+    
     useEffect(()=> {
         authService.onAuthChange(user => {
             if(!user) {
@@ -52,11 +53,17 @@ const Maker = ({authService}) => {
         });
         console.log(location);
     });
+
+    const addCard = (card) => {
+        const newCard = [...cards,card];
+        setCards(newCard);
+    }
+
     return (
         <section className={styles.maker}>
             <Header onLogout={onLogout} />
             <div className={styles.makerContents}>
-                <Editor cards={cards}/>
+                <Editor cards={cards} addCard={addCard}/>
                 <Preview cards={cards}/>
             </div>
             <Footer/>
