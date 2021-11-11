@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { useLocation, useNavigate } from 'react-router';
+import { useNavigate } from 'react-router';
 import Editor from '../editor/editor';
 import Footer from '../footer/footer';
 import Header from '../header/header';
@@ -42,7 +42,6 @@ const Maker = ({authService}) => {
         fileURL: null
         },
     });
-    const location = useLocation();
     const navigate = useNavigate();
     const onLogout = () => {
         authService.logout();
@@ -54,7 +53,6 @@ const Maker = ({authService}) => {
                 navigate('/');
             }
         });
-        console.log(location);
     });
 
     const deleteCard = (card) => {
