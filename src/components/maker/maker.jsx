@@ -19,28 +19,6 @@ const Maker = ({authService,FileInput}) => {
         fileName: 'sangmin',
         fileURL: null
         },
-        '2' : {
-        id: '2',
-        name: 'Jacdoo',
-        company: 'kakao',
-        theme: 'dark', 
-        title: 'Backend Engineer',
-        email: 'dhkdhkd72@gmail.com',
-        message: 'Hi,there',
-        fileName: 'jacdoo',
-        fileURL: 'jacdoo.png'
-        },
-        '3' : {
-        id: '3',
-        name: 'Angel',
-        company: 'No',
-        theme: 'light', 
-        title: 'CoinAnalizer',
-        email: 'khslhs1@gmail.com',
-        message: 'zonber',
-        fileName: 'angel',
-        fileURL: null
-        },
     });
     const navigate = useNavigate();
     const onLogout = () => {
