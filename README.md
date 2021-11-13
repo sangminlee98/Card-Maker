@@ -6,4 +6,5 @@
 - <img alt="React Router" src ="https://img.shields.io/badge/ReactRouter-CA4245.svg?&style=for-the-badge&logo=ReactRouter&logoColor=white"/>
 - <img alt="Firebase" src ="https://img.shields.io/badge/Firebase-FFCA28.svg?&style=for-the-badge&logo=React&logoColor=white"/>
 - <img alt="PostCSS" src ="https://img.shields.io/badge/PostCSS-DD3A0A.svg?&style=for-the-badge&logo=PostCSS&logoColor=white"/>
+- https://logos-download.com/wp-content/uploads/2020/07/Cloudinary_Logo.png
  
