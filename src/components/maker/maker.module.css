@@ -2,13 +2,14 @@
 @value makerWhite from '../../common/colors.css';
 
 .maker {
-  width: 100%;
+  width: 80%;
   height: 100%;
   display: flex;
   flex-direction: column;
 }
 
 .makerContents {
+  height: 80%;
   display: flex;
   flex: 1;
 }

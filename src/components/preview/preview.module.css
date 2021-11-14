@@ -4,6 +4,8 @@
   flex-basis: 50%;
   background-color: white;
   padding: 0.5em 1.5em;
+  height: 80vh;
+  overflow: scroll;
 }
 
 .title {
