@@ -12,6 +12,7 @@ const Maker = ({authService,FileInput, cardRepository}) => {
     const [userId,setUserId] = useState(historyState && historyState.id);
 
     const navigate = useNavigate();
+    const location = useLocation();
     const onLogout = () => {
         authService.logout();
     }
@@ -24,6 +25,7 @@ const Maker = ({authService,FileInput, cardRepository}) => {
                 navigate('/');
             }
         });
+        console.log(location);
     });
 
     useEffect( ()=> {
