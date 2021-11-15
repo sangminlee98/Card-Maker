@@ -1,25 +1,16 @@
 import React, { useEffect, useState } from 'react';
-import { useNavigate } from 'react-router';
+import { useLocation, useNavigate } from 'react-router';
 import Editor from '../editor/editor';
 import Footer from '../footer/footer';
 import Header from '../header/header';
 import Preview from '../preview/preview';
 import styles from './maker.module.css';
 
-const Maker = ({authService,FileInput}) => {
-    const [cards,setCards] = useState({
-        '1' : {
-        id: '1',
-        name: 'Sangmin',
-        company: 'samsung',
-        theme: 'colorful', 
-        title: 'Frontend Engineer',
-        email: 'tkdals09789@gmail.com',
-        message: 'go for it',
-        fileName: 'sangmin',
-        fileURL: null
-        },
-    });
+const Maker = ({authService,FileInput, cardRepository}) => {
+    const historyState = useLocation().state;
+    const [cards,setCards] = useState({});
+    const [userId,setUserId] = useState(historyState && historyState.id);
+
     const navigate = useNavigate();
     const onLogout = () => {
         authService.logout();
@@ -27,7 +18,9 @@ const Maker = ({authService,FileInput}) => {
     
     useEffect(()=> {
         authService.onAuthChange(user => {
-            if(!user) {
+            if(user) {
+                setUserId(user.uid);
+            } else {
                 navigate('/');
             }
         });
@@ -39,6 +32,7 @@ const Maker = ({authService,FileInput}) => {
             delete updated[card.id];
             return updated;
         });
+        cardRepository.removeCard(userId,card);
     }
 
     const createOrUpdateCard = (card) => {
@@ -47,6 +41,7 @@ const Maker = ({authService,FileInput}) => {
             updated[card.id] = card;
             return updated;
         });
+        cardRepository.saveCard(userId,card);
     }
     return (
         <section className={styles.maker}>

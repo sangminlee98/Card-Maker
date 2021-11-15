@@ -5,7 +5,7 @@
   background-color: white;
   padding: 0.5em 1.5em;
   height: 80vh;
-  overflow: scroll;
+  overflow-y: auto;
 }
 
 .title {
