@@ -7,7 +7,7 @@ import Preview from '../preview/preview';
 import styles from './maker.module.css';
 
 const Maker = ({authService,FileInput, cardRepository}) => {
-    const historyState = useLocation().state;
+    const historyState = useLocation()?.state;
     const [cards,setCards] = useState({});
     const [userId,setUserId] = useState(historyState && historyState.id);
 
@@ -25,6 +25,16 @@ const Maker = ({authService,FileInput, cardRepository}) => {
             }
         });
     });
+
+    useEffect( ()=> {
+        if(!userId) {
+            return;
+        }
+        const stopSync = cardRepository.syncCards(userId, cards => {
+            setCards(cards);
+        })
+        return () => stopSync();
+    },[userId]);
 
     const deleteCard = (card) => {
         setCards(cards => {
