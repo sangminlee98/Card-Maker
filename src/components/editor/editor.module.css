@@ -6,7 +6,7 @@
   background-color: white;
   border-right: 1px solid makerLightGrey;
   padding: 0.5em 1.5em;
-  height: 80vh;
+  height: 100%;
   overflow-y: auto;
 }
 
